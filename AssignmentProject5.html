@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ColorPalette</title>
+    <link rel="stylesheet" href="Project5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="container">
+        <div><h1>Color Palette Generator</h1></div>
+        <div><button onclick="generatePalette()" style="cursor:pointer;"><i class="fa-solid fa-rotate"></i>Generate Palette</h3></div>
+        <div id="pallettes">
+            <div class="color-box">
+                <div class="color" style="background-color: #d04517;"></div>
+                <div class="color-info">
+                    <span class="hex">#ffff<i class="fa-solid fa-copy"></i></span>
+                </div>
+            </div>
+            <div class="color-box">
+                <div class="color" style="background-color: #06f041;"></div>
+                <div class="color-info">
+                    <span class="hex">#ffff<i class="fa-solid fa-copy"></i></span>
+                </div>
+            </div>
+            <div class="color-box">
+                <div class="color" style="background-color: #0b80e0;"></div>
+                <div class="color-info">
+                    <span class="hex">#ffff<i class="fa-solid fa-copy"></i></span>
+                </div>
+            </div>
+            <div class="color-box">
+                <div class="color" style="background-color: #0f164c;"></div>
+                <div class="color-info">
+                    <span class="hex">#ffff<i class="fa-solid fa-copy"></i></span>
+                </div>
+            </div>
+            <div class="color-box">
+                <div class="color" style="background-color: #3e080e;"></div>
+                <div class="color-info">
+                    <span class="hex">#ffff<i class="fa-solid fa-copy"></i></span>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script>
+        function generatePalette() {
+
+    var colorBoxes = document.getElementsByClassName("color-box");
+
+    for (var i = 0; i < colorBoxes.length; i++) {
+
+        var randomColor = getRandomColor();
+
+        var colorDiv = colorBoxes[i].getElementsByClassName("color")[0];
+        var hexText = colorBoxes[i].getElementsByClassName("hex")[0];
+
+        colorDiv.style.backgroundColor = randomColor;
+        hexText.innerHTML = randomColor + ' <i class="fa-solid fa-copy"></i>';
+    }
+}
+
+function getRandomColor() {
+
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+
+    for (var i = 1; i <= 6; i++) {
+        var randomIndex = Math.floor(Math.random() * 16);
+        color = color + letters[randomIndex];
+    }
+
+    return color;
+}
+
+    </script>
+</body>
+</html>
