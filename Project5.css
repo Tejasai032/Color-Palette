@@ -50,4 +50,61 @@ button{
 #pallettes{
     display: flex;
     justify-content: space-evenly;
+
+}
+
+
+@media (max-width: 1024px) {
+    #container {
+        width: 60%;
+    }
+
+    #pallettes {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    #container {
+        width: 90%;
+    }
+
+    button {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #pallettes {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .color {
+        width: 70px;
+        height: 90px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    #container h1 {
+        font-size: 20px;
+    }
+
+    .color {
+        width: 60px;
+        height: 80px;
+    }
+
+    .hex {
+        font-size: 14px;
+    }
 }
